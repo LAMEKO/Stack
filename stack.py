@@ -14,7 +14,7 @@ class Stack:
         cur = self.top
         count = 0
         while cur:
-            count+=1
+            count += 1
             cur = cur.prev
         return count
 
@@ -54,14 +54,11 @@ class Stack:
         result += ')'
         return result
 
-    def __next__(self):
+    def __iter__(self):
         cur = self.top
         while cur:
             yield cur.data
             cur = cur.prev
-
-    def __iter__(self):
-        return self.__next__()
 
     def __getitem__(self, item):
         cur = self.top
